@@ -14,7 +14,7 @@ export default function Layout(props) {
   var history = useHistory();
 
   const rd = async () => {
-    const data = await axios("https://localhost:3000/login");
+    const data = await axios.get("http://localhost:3000/login");
     const sub = data.sub;
     const t = await contract.methods.Identify2(sub).call();
     console.log(t);

@@ -144,7 +144,7 @@ function Home() {
             <div className="d-flex align-items-center justify-content-center">
               <div className="px-md-5 text-center text-secondary">
                 <p className="badge text-secondary">Built by</p>
-                <h6 className="text-white"> Surbhit Agrawal & Fabian Ferno</h6>
+                <h6 className="text-white"> Surbhit Agrawal</h6>
               </div>
             </div>
           </div>
