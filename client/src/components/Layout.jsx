@@ -14,8 +14,12 @@ export default function Layout(props) {
   var history = useHistory();
 
   const rd = async () => {
-    const data = await axios.get("http://localhost:3000/login");
-    const sub = data.sub;
+    console.log("clicked");
+    const {data} = await axios.get("http://localhost:3000/login");
+    console.log(data);
+    // const redirect = JSON.parse(data);
+    const {data2} = await axios.get(data);
+    var sub = data2.sub;
     const t = await contract.methods.Identify2(sub).call();
     console.log(t);
     switch (t) {
