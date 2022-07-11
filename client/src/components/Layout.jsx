@@ -12,7 +12,7 @@ import axios from 'axios';
 export default function Layout(props) {
   const { address, contract } = useContext(UserContext);
   const onSuccess = response => console.log(response);
-const onFailure = response => console.error(response);
+  const onFailure = response => console.error(response);
   const location = useLocation();
   var history = useHistory();
   const rd = async () => {
@@ -21,6 +21,7 @@ const onFailure = response => console.error(response);
     console.log(data);
     console.log(data.id);
     var sub = data.id;
+    localStorage.setItem('token', sub);
     const t = await contract.methods.Identify2(sub).call();
     console.log(t);
     switch (t) {

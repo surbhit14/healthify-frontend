@@ -27,7 +27,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0xaAc86611a1AF8cFf09a0b8074fa429dA58D5Fe0C"
+      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
     );
     uid = await contract.methods.addresstoId(address).call();
     console.log(uid, did, contract);
@@ -44,7 +44,7 @@ function Patient() {
     var doctorDetailsArray = [];
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0xaAc86611a1AF8cFf09a0b8074fa429dA58D5Fe0C"
+      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
     );
     doctors.forEach(async (i) => {
       var x = await contract.methods.getDoctorInfo(i).call();
@@ -58,7 +58,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0xaAc86611a1AF8cFf09a0b8074fa429dA58D5Fe0C"
+      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
     );
     var treatmentDetailsArray = [];
     treatments.forEach(async (i) => {
@@ -85,7 +85,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0xaAc86611a1AF8cFf09a0b8074fa429dA58D5Fe0C"
+      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
     );
     const t = await contract.methods.Identify().call();
 

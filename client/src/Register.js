@@ -32,18 +32,21 @@ function Register() {
     var doctorPhone = doctorPhoneInputRef.current.value;
     var doctorPractice = doctorPracticeInputRef.current.value;
     var doctorExpertise = doctorExpertiseInputRef.current.value;
+    var token = localStorage.getItem('token');
 
     console.log(
       doctorName,
       doctorAddress,
       doctorPhone,
       doctorPractice,
-      doctorExpertise
+      doctorExpertise,
+      token
     );
 
     const receipt = await contract.methods
       .addDoctor(
         doctorId,
+        token,
         doctorName,
         doctorPractice,
         doctorExpertise,
@@ -66,12 +69,14 @@ function Register() {
     var patientPhone = patientPhoneInputRef.current.value;
     // var patientAge = patientAgeInputRef.current.value;
     var patientBloodGroup = patientBloodGroupInputRef.current.value;
-
-    console.log(patientName, patientAddress, patientPhone, patientBloodGroup);
-
+    var token = localStorage.getItem('token');
+    console.log(patientName, patientAddress, patientPhone, patientBloodGroup,token);
+    
+    token="8Uyek2JAApwXklrbXugE";
     const receipt = await contract.methods
       .addPatientInfo(
         patientId,
+        token,
         patientName,
         patientAddress,
         patientPhone,
