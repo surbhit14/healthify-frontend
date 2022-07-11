@@ -1,25 +1,26 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useContext } from "react";
 
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation, useHistory,useParams } from "react-router-dom";
 
 import { UserContext } from "../UserContext";
+import OAuth2Login from 'react-simple-oauth2-login';
 import Logo from "../assets/img/healthify.png";
 import axios from 'axios';
 
 
 export default function Layout(props) {
+  const { address, contract } = useContext(UserContext);
+  const onSuccess = response => console.log(response);
+const onFailure = response => console.error(response);
   const location = useLocation();
-  const { contract } = useContext(UserContext);
   var history = useHistory();
-
   const rd = async () => {
     console.log("clicked");
-    const {data} = await axios.get("http://localhost:3000/login");
+    const {data} = await axios.get(`http://localhost:3000/token/${address}`);
     console.log(data);
-    // const redirect = JSON.parse(data);
-    const {data2} = await axios.get(data);
-    var sub = data2.sub;
+    console.log(data.id);
+    var sub = data.id;
     const t = await contract.methods.Identify2(sub).call();
     console.log(t);
     switch (t) {
@@ -65,12 +66,31 @@ export default function Layout(props) {
               <span style={{ marginLeft: "15px" }}>healthify</span>
             </Link>
             {location.pathname === "/" && (
-              <div
+
+              <div>
+                 <div
                 onClick={() => rd()}
                 className="p-3 btn btn-outline-primary fw-bold btn-lg "
               >
-                Get Started
+              
+              Get Started
               </div>
+                  <OAuth2Login
+                  className="p-3 btn btn-outline-primary fw-bold btn-lg "
+                  authorizationUrl={`http://localhost:3000/${address}`}
+                  responseType="token"
+                  // clientId="hackathon-participant"
+                  redirectUri="http://localhost:3000/oauth-callback"
+                  isCrossOrigin= "true"
+                  extraParams={{ client_secret: 'q4_GkveX47i3M9wYXSkU5CKn3h',
+                  token_endpoint_auth_method: 'client_secret_post'
+                }}
+                  buttonText="Scan Face"
+                  onSuccess={onSuccess}
+                  onFailure={onFailure}/>
+              </div>
+              
+             
             )}
           </div>
 
