@@ -77,7 +77,7 @@ const onFailure = response => console.error(response);
               </div>
                   <OAuth2Login
                   className="p-3 btn btn-outline-primary fw-bold btn-lg "
-                  authorizationUrl={`http://localhost:3000/${address}`}
+                  authorizationUrl={`http://localhost:3000/auth/${address}`}
                   responseType="token"
                   // clientId="hackathon-participant"
                   redirectUri="http://localhost:3000/oauth-callback"
