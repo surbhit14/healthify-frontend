@@ -66,14 +66,7 @@ export default function Layout(props) {
             {location.pathname === "/" && (
 
               <div>
-                 <div
-                onClick={() => rd()}
-                className="p-3 btn btn-outline-primary fw-bold btn-lg "
-              >
-              
-              Get Started
-              </div>
-                  <OAuth2Login
+                <OAuth2Login
                   className="p-3 btn btn-outline-primary fw-bold btn-lg "
                   authorizationUrl={`http://localhost:3000/auth/${address}`}
                   responseType="token"
@@ -86,6 +79,16 @@ export default function Layout(props) {
                   buttonText="Scan Face"
                   onSuccess={onSuccess}
                   onFailure={onFailure}/>
+
+                 <div
+                onClick={() => rd()}
+                className="p-3 btn btn-outline-primary fw-bold btn-lg "
+                style={{ marginLeft: "20px" }}
+              >
+              
+              Get Started
+              </div>
+                  
               </div>
               
              
