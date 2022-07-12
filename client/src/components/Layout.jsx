@@ -16,10 +16,7 @@ export default function Layout(props) {
   const location = useLocation();
   var history = useHistory();
   const rd = async () => {
-    console.log("clicked");
     const {data} = await axios.get(`http://localhost:3000/token/${address}`);
-    console.log(data);
-    console.log(data.id);
     var sub = data.id;
     localStorage.setItem('token', sub);
     const t = await contract.methods.Identify2(sub).call();

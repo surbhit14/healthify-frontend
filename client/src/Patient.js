@@ -133,6 +133,10 @@ function Patient() {
                     <h6>Phone</h6>
                     <h3 className="fw-bold text-primary">{phn}</h3>
                   </div>
+                  <div>
+                    <h6>Blood Group </h6>
+                    <h3 className="fw-bold text-primary">{bld}</h3>
+                  </div>
                 </div>
               </div>
             </div>
