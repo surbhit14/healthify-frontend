@@ -1,6 +1,5 @@
-# Healthify App
-### Healthcare Management
-#### Powered by Celo
+# Healthify App 
+### Decentralized Healthcare Management System
 ---
 
 ## Healthify is the next generation of healthcare. The platform stores data on the blockchain with the help of smart contracts
@@ -31,16 +30,15 @@ Healthify is a decentralized hospital management system built on blockchain usin
 
 ## How it works?
 #### 
-- **[Celo](https://celo.org/ "Celo")** - Powered by Celo Platform.
+- Humanode OAuth 2 Service
 - Smart Contracts using Solidity
 - Front End App with React
 - Celo Developer SDK 
 
-- **This app was built for the "Celo YBlockChain Hackathon.". Please show your support by starring our repository.**
+- **This app was built for the "Humanode "Hack the Sybil" Hackathon".**
 
 ##### The Team
 
-* **@fabianferno** - [Twitter](https://twitter.com/FabianFerno), [GitHub](https://github.com/fabianferno)
 * **@surbhit14** - [Github](https://github.com/surbhit14)
 
 
