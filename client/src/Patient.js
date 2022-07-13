@@ -27,7 +27,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
+      "0xa1918fF37678987a42550f2661D03AF3C732df53"
     );
     uid = await contract.methods.addresstoId(address).call();
     console.log(uid, did, contract);
@@ -44,7 +44,7 @@ function Patient() {
     var doctorDetailsArray = [];
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
+      "0xa1918fF37678987a42550f2661D03AF3C732df53"
     );
     doctors.forEach(async (i) => {
       var x = await contract.methods.getDoctorInfo(i).call();
@@ -58,7 +58,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
+      "0xa1918fF37678987a42550f2661D03AF3C732df53"
     );
     var treatmentDetailsArray = [];
     treatments.forEach(async (i) => {
@@ -85,7 +85,7 @@ function Patient() {
     let kit = ContractKit.newKitFromWeb3(web3);
     contract = new kit.web3.eth.Contract(
       healthify_contract,
-      "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
+      "0xa1918fF37678987a42550f2661D03AF3C732df53"
     );
     const t = await contract.methods.Identify().call();
 
@@ -94,11 +94,11 @@ function Patient() {
       // console.log(web3);
       const res = await contract.methods.getPatientInfo(uid).call();
       setName(res[0]);
-      setAddr(res[1]);
-      setPhn(res[2]);
-      setBld(res[3]);
-      setTreatments(res[4]);
-      setDoctors(res[5]);
+      setAddr(res[2]);
+      setPhn(res[3]);
+      setBld(res[4]);
+      setTreatments(res[5]);
+      setDoctors(res[6]);
 
       getBalance();
     }
@@ -179,7 +179,7 @@ function Patient() {
                     <div className="mt-3 btn text-start card card-body bg-black text-white rounded ">
                       <div>
                         <h2 className="bg-primary text-black text-start p-2 rounded fw-bold">
-                          Dr. {doctor[0]}
+                          {doctor[0]}
                         </h2>
                         <h5 className="p-2">Expertise: {doctor[2]}</h5>
                         <h6 className="p-2 text-secondary">

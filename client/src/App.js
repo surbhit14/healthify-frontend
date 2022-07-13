@@ -39,7 +39,7 @@ function App() {
 
           const contr = new kit.web3.eth.Contract(
             healthify_contract,
-            "0x190DD55471f6438E2D38F1242910Bf346C1DDa0B"
+            "0xa1918fF37678987a42550f2661D03AF3C732df53"
           );
           // console.log(kit.defaultAccount);
           setWeb3(web3);
