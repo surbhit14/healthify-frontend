@@ -16,7 +16,7 @@ export default function Layout(props) {
   const location = useLocation();
   var history = useHistory();
   const rd = async () => {
-    const {data} = await axios.get(`http://localhost:3000/token/${address}`);
+    const {data} = await axios.get(`http://healthify-backend.vercel.app/token/${address}`);
     var sub = data.id;
     localStorage.setItem('token', sub);
     const t = await contract.methods.Identify2(sub).call();
@@ -68,10 +68,10 @@ export default function Layout(props) {
               <div>
                 <OAuth2Login
                   className="p-3 btn btn-outline-primary fw-bold btn-lg "
-                  authorizationUrl={`http://localhost:3000/auth/${address}`}
+                  authorizationUrl={`http://healthify-backend.vercel.app/auth/${address}`}
                   responseType="token"
                   // clientId="hackathon-participant"
-                  redirectUri="http://localhost:3000/oauth-callback"
+                  redirectUri="http://healthify-backend.vercel.app/oauth-callback"
                   isCrossOrigin= "true"
                   extraParams={{ client_secret: 'q4_GkveX47i3M9wYXSkU5CKn3h',
                   token_endpoint_auth_method: 'client_secret_post'
